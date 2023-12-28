@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
   }
 
   button.addEventListener("mouseover", () => {
-    const audio = new Audio("/assets/fart2.mp3");
+    const audio = new Audio("/public/assets/fart2.mp3");
     audio.onerror = () => {
       console.error("Failed to load audio file");
     };
