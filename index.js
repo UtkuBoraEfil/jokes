@@ -1,7 +1,6 @@
 import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
-import sound from "sound-play";
 
 const app = express();
 const port = 3000;
@@ -35,9 +34,9 @@ app.post("/submit", async (req, res) => {
 
     if (selectedFlags.length > 0) {
       strurl += "?blacklistFlags=";
-      if(Array.isArray(selectedFlags)){
+      if (Array.isArray(selectedFlags)) {
         strurl += selectedFlags.join(",");
-      } else{
+      } else {
         strurl += selectedFlags;
       }
     }
@@ -58,7 +57,6 @@ app.post("/submit", async (req, res) => {
         selectedFlags: selectedFlags,
       });
     }
-    sound.play("assets/fart2.MP3");
   } catch (error) {
     console.log(error);
   }

@@ -1,107 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>jokes</title>
+    <link
+      rel="stylesheet"
+      href="/dist/output.css"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>jokes</title>
-  <link rel="stylesheet" href="/dist/output.css" />
-</head>
+  <body
+    class="bg-gray-900 text-white min-h-screen w-full grid place-items-center"
+  >
+    <main>
+      <section
+        class="bg-gradient-to-t from-gray-700 via-gray-900 to-black p-4 rounded-lg shadow-md shadow-black min-w-[400px] sm:max-w-[720px] mx-4 sm:mx-5 text-lg sm:text-xl"
+      >
+        <form
+          action="/submit"
+          method="post"
+        >
+          <div class="flex justify-between sm:flex-col">
+            <div class="sm:flex justify-between sm:gap-4">
+              <div>
+                <input type="checkbox" id="programming" name="categories"
+                value="Programming" class="box" <% if (locals.selectedCategories
+                && locals.selectedCategories.includes('Programming')) { %>
+                checked="checked" <% } %> />
+                <label for="programming"> programming</label>
+              </div>
+              <div>
+                <input type="checkbox" id="misc" name="categories"
+                value="Miscellaneous" class="box" <% if
+                (locals.selectedCategories &&
+                locals.selectedCategories.includes('Miscellaneous')) { %>
+                checked="checked" <% } %> />
+                <label for="misc">misc</label>
+              </div>
+              <div>
+                <input type="checkbox" id="dark" name="categories" value="Dark"
+                class="box" <% if (locals.selectedCategories &&
+                locals.selectedCategories.includes('Dark')) { %>
+                checked="checked" <% } %> />
+                <label for="dark">dark</label>
+              </div>
+              <div>
+                <input type="checkbox" id="pun" name="categories" value="Pun"
+                class="box" <% if (locals.selectedCategories &&
+                locals.selectedCategories.includes('Pun')) { %>
+                checked="checked" <% } %> />
+                <label for="pun">pun</label>
+              </div>
+              <div>
+                <input type="checkbox" id="spooky" name="categories"
+                value="Spooky" class="box" <% if (locals.selectedCategories &&
+                locals.selectedCategories.includes('Spooky')) { %>
+                checked="checked" <% } %> />
+                <label for="spooky">spooky</label>
+              </div>
+              <div>
+                <input type="checkbox" id="christmas" name="categories"
+                value="Christmas" class="box" <% if (locals.selectedCategories
+                && locals.selectedCategories.includes('Christmas')) { %>
+                checked="checked" <% } %> />
+                <label for="christmas">christmas</label>
+              </div>
+            </div>
 
-<body class="bg-gray-900 text-white min-h-screen w-full grid place-items-center">
-  <main>
-    <section
-      class="bg-gradient-to-t from-gray-700 via-gray-900 to-black p-4 rounded-lg shadow-md shadow-black  min-w-[400px] sm:max-w-[720px] mx-4 sm:mx-5 text-lg sm:text-xl">
-      <form action="/submit" method="post">
-        <div class="flex justify-between sm:flex-col">
-          <div class="sm:flex justify-between sm:gap-4">
-            <div>
-              <input type="checkbox" id="programming" name="categories" value="Programming" class="box" 
-              <% if (locals.selectedCategories && locals.selectedCategories.includes('Programming')) { %> checked="checked" <% } %> 
-              />
-              <label for="programming"> programming</label>
-            </div>
-            <div>
-              <input type="checkbox" id="misc" name="categories" value="Miscellaneous" class="box" 
-              <% if (locals.selectedCategories && locals.selectedCategories.includes('Miscellaneous')) { %> checked="checked" <% } %> 
-              />
-              <label for="misc">misc</label>
-            </div>
-            <div>
-              <input type="checkbox" id="dark" name="categories" value="Dark" class="box" 
-              <% if (locals.selectedCategories && locals.selectedCategories.includes('Dark')) { %> checked="checked" <% } %> 
-              />
-              <label for="dark">dark</label>
-            </div>
-            <div>
-              <input type="checkbox" id="pun" name="categories" value="Pun" class="box" 
-              <% if (locals.selectedCategories && locals.selectedCategories.includes('Pun')) { %> checked="checked" <% } %> 
-              />
-              <label for="pun">pun</label>
-            </div>
-            <div>
-              <input type="checkbox" id="spooky" name="categories" value="Spooky" class="box" 
-              <% if (locals.selectedCategories && locals.selectedCategories.includes('Spooky')) { %> checked="checked" <% } %> 
-              />
-              <label for="spooky">spooky</label>
-            </div>
-            <div>
-              <input type="checkbox" id="christmas" name="categories" value="Christmas" class="box" 
-              <% if (locals.selectedCategories && locals.selectedCategories.includes('Christmas')) { %> checked="checked" <% } %> 
-              />
-              <label for="christmas">christmas</label>
+            <br />
+
+            <div class="sm:flex justify-between gap-2 sm:gap-4 mb-5">
+              <div>
+                <input type="checkbox" flags="nsfw" name="flags" value="nsfw"
+                class="box" <% if (locals.selectedFlags &&
+                locals.selectedFlags.includes('nsfw')) { %> checked="checked" <%
+                } %> />
+                <label for="msfw"> nsfw</label>
+              </div>
+              <div>
+                <input type="checkbox" id="religious" name="flags"
+                value="religious" class="box" <% if (locals.selectedFlags &&
+                locals.selectedFlags.includes('religious')) { %>
+                checked="checked" <% } %> />
+                <label for="religious">religious</label>
+              </div>
+              <div>
+                <input type="checkbox" id="political" name="flags"
+                value="political" class="box" <% if (locals.selectedFlags &&
+                locals.selectedFlags.includes('political')) { %>
+                checked="checked" <% } %> />
+                <label for="political">political</label>
+              </div>
+              <div>
+                <input type="checkbox" id="racist" name="flags" value="racist"
+                class="box" <% if (locals.selectedFlags &&
+                locals.selectedFlags.includes('racist')) { %> checked="checked"
+                <% } %> />
+                <label for="racist">racist</label>
+              </div>
+              <div>
+                <input type="checkbox" id="sexist" name="flags" value="sexist"
+                class="box" <% if (locals.selectedFlags &&
+                locals.selectedFlags.includes('sexist')) { %> checked="checked"
+                <% } %> />
+                <label for="sexist">sexist</label>
+              </div>
+              <div>
+                <input type="checkbox" id="explicit" name="flags"
+                value="explicit" class="box" <% if (locals.selectedFlags &&
+                locals.selectedFlags.includes('explicit')) { %>
+                checked="checked" <% } %> />
+                <label for="explicit">explicit</label>
+              </div>
             </div>
           </div>
-  
-          <br />
-  
-          <div class="sm:flex justify-between gap-2 sm:gap-4 mb-5">
-            <div>
-              <input type="checkbox" flags="nsfw" name="flags" value="nsfw" class="box" 
-              <% if (locals.selectedFlags && locals.selectedFlags.includes('nsfw')) { %> checked="checked" <% } %> />
-              <label for="msfw"> nsfw</label>
-            </div>
-            <div>
-              <input type="checkbox" id="religious" name="flags" value="religious" class="box"  <% if (locals.selectedFlags && locals.selectedFlags.includes('religious')) { %> checked="checked" <% } %> />
-              <label for="religious">religious</label>
-            </div>
-            <div>
-              <input type="checkbox" id="political" name="flags" value="political" class="box"  <% if (locals.selectedFlags && locals.selectedFlags.includes('political')) { %> checked="checked" <% } %> />
-              <label for="political">political</label>
-            </div>
-            <div>
-              <input type="checkbox" id="racist" name="flags" value="racist" class="box" <% if (locals.selectedFlags && locals.selectedFlags.includes('racist')) { %> checked="checked" <% } %> />
-              <label for="racist">racist</label>
-            </div>
-            <div>
-              <input type="checkbox" id="sexist" name="flags" value="sexist" class="box" <% if (locals.selectedFlags && locals.selectedFlags.includes('sexist')) { %> checked="checked" <% } %> />
-              <label for="sexist">sexist</label>
-            </div>
-            <div>
-              <input type="checkbox" id="explicit" name="flags" value="explicit" class="box" <% if (locals.selectedFlags && locals.selectedFlags.includes('explicit')) { %> checked="checked" <% } %> />
-              <label for="explicit">explicit</label>
-            </div>
+
+          <div class="flex justify-center">
+            <button
+              id="btn"
+              class="bg-gradient-to-b from-gray-700 via-gray-900 to-black p-2 rounded-md hover:scale-95 transition duration-300 ease-in-out mb-8 sm:mb-5"
+            >
+              send a joke
+            </button>
           </div>
-        </div>
+        </form>
 
-        <div class="flex justify-center">
-          <button id="btn"
-            class="bg-gradient-to-b from-gray-700 via-gray-900 to-black p-2 rounded-md hover:scale-95 transition duration-300 ease-in-out mb-8 sm:mb-5">
-            send a joke
-          </button>
-        </div>
-      </form>
-
-      <h1 class="text-xl sm:text-2xl text-center">
-        <%= content %>
-      </h1>
-      <% if (locals.delivery) { %>
-        <h1 class="text-xl sm:text-2xl text-center">
-          <%= delivery %>
-        </h1>
+        <h1 class="text-xl sm:text-2xl text-center"><%= content %></h1>
+        <% if (locals.delivery) { %>
+        <h1 class="text-xl sm:text-2xl text-center"><%= delivery %></h1>
         <% } %>
-    </section>
-  </main>
-</body>
+      </section>
+    </main>
 
+    <script
+      src="script.js"
+      type="text/javascript"
+    ></script>
+  </body>
 </html>
