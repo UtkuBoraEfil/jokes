@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
@@ -18,7 +18,11 @@
     "play-sound": "^1.1.6",
     "sound-play": "^1.1.0"
   },
+  "engines":{
+    "node": ">=14"
+  },
   "devDependencies": {
     "tailwindcss": "^3.4.0"
   }
+
 }
